@@ -1,0 +1,10 @@
+<h1>Exam </h1>
+{% if exam_pub %}
+    <ul>
+    {% for exam in exam_pub %}
+        <li><a href="{{ exam.id }}/">{{ exam.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

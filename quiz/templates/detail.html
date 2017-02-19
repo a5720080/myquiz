@@ -1,0 +1,14 @@
+<h1>{{ exam.name }}</h1>
+
+{% for quiz in exam.quiz_set.all %}
+    {{ quiz.quiz_name }}
+
+<ul>
+{% for choice in quiz.choice_set.all %}
+    <input type = "radio" name = "{{ quiz.id }}" id = "choice{{ forloop.counter }}" value="{{ choice.id }}"
+    <label for = "choice{{ forloop.counter }}" > {{choice.choice_name}}</label><br/>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+<input type="submit" value="Sent" />
